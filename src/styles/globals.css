@@ -1,0 +1,93 @@
+:root {
+  font-family: 'Manrope', sans-serif;
+  color: #e4e4e7;
+  background:
+    radial-gradient(circle at top, rgba(0, 0, 0, 0.12), transparent 28%),
+    radial-gradient(circle at 85% 20%, rgba(251, 191, 36, 0.08), transparent 18%),
+    linear-gradient(180deg, #050816, #020617 60%, #040814);
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+:root.dark {
+  color-scheme: dark;
+}
+
+:root:not(.dark) {
+  color: #0f172a;
+  background:
+    radial-gradient(circle at top, rgba(14, 165, 233, 0.12), transparent 30%),
+    radial-gradient(circle at 85% 20%, rgba(245, 158, 11, 0.12), transparent 18%),
+    linear-gradient(180deg, #f8fafc, #eef2ff 56%, #f8fafc);
+  color-scheme: light;
+}
+
+@theme inline {
+  --font-display: 'Syne', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: inherit;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(circle at center, black, transparent 78%);
+}
+
+:root:not(.dark) body::before {
+  opacity: 0.08;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+canvas {
+  display: block;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.thin-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background: rgba(148, 163, 184, 0.45);
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.65);
+}
+
+.dark .light-only {
+  display: none;
+}
